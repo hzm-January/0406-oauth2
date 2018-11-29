@@ -1,0 +1,20 @@
+server:
+  port: 8083
+logging:
+  level:
+    houzm.accumulation.oauth2: debug
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          myclient:
+            client-id: my-client-id
+            client-secret: my-client-secret
+        provider:
+          myclient:
+            authorization-uri: https://your-subdomain.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://your-subdomain.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://your-subdomain.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://your-subdomain.oktapreview.com/oauth2/v1/keys

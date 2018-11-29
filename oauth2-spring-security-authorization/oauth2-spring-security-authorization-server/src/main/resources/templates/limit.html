@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>limited page</title>
+</head>
+<body>
+    <div>
+        <h1>the page is limited, sign in and you can see my secret</h1>
+        <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
+        <hr>
+        <p>
+            click  <a th:href="@{/out}"> here</a> to login out
+        </p>
+    </div>
+</body>
+</html>

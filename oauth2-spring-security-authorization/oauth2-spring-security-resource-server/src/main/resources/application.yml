@@ -1,0 +1,7 @@
+server:
+  port: 8082
+logging:
+  level:
+    houzm.accumulation.oauth2: debug
+#  basic:
+#    enabled: false

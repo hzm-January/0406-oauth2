@@ -1,0 +1,32 @@
+oauth2
+1.不是认证框架也不是认证协议，本身不能告诉你任何用户信息
+2.并没有支持http以外的协议
+3.并没有定义授权处理机制
+4.并没有定义token格式
+5.并没有定义加密方法
+6.并不是单个协议
+7.仅是授权框架，仅用于授权代理
+
+oauth2 几种模式
+1.授权码模式（最安全：令牌不会传递经过user-agent）
+2.简化模式implicit (最容易受到安全攻击，不支持refresh-token)
+3.密码模式resource owner credentials (一般不支持refresh-token)
+4.客户端模式client credentials
+
+
+
+令牌类型：
+1.访问令牌Access token 用于代表一个用户或者服务直接去访问受保护的资源
+2.刷新令牌Refresh token 用于去授权服务器获取一个新的访问令牌
+3.授权码Authorization Code Token 仅用于授权码授权类型，用于交换获取访问令牌和刷新令牌
+4.Bearer Token 不管谁拿到Token都可以访问资源
+5.proof of possession(PoP) token 可以校验client是否对token有明确的拥有权
+
+1. 微服务安全要解决的问题
+1.1 开放系统间授权
+1.1.1 场景：资源拥有者--客户应用--受保护的资源
+1.1.2 实现方式：
+1.账号密码：资源拥有者提供资源账号密码给客户应用，客户应用使用账号密码获取受保护的资源
+2.万能钥匙：三者协商一个develop key
+3.特殊令牌：仅能访问受保护的资源
+微服务安全
